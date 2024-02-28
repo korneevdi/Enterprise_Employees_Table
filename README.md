@@ -10,4 +10,4 @@ When you click on the *"add"* button, another View component should open, which 
 
 To create such an application, you need to open IntelliJ IDEA (or another IDE you use) and choose **Maven** -> **maven-archetype-webapp**. This way Maven can automatically download some of the required dependencies and plugins. The next step is to prepare the database with which our application will connect. You can use the **initial_database.sql** file to initialize the database and populate a few positions.
 
-After this, you need to add the remaining dependencies to the **pom.xml** file. You can use the website (https://mvnrepository.com/) for this. Also, don't forget to download and install [Apache Tomcat](https://tomcat.apache.org/download-90.cgi) using *Edit configurations*.
+After this, you need to add the remaining dependencies to the **pom.xml** file. You can use the website https://mvnrepository.com for this. Also, don't forget to download and install [Apache Tomcat](https://tomcat.apache.org/download-90.cgi) using *Edit configurations*.
