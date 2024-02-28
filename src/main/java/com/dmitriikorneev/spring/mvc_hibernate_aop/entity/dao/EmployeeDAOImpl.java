@@ -1,6 +1,6 @@
-package com.zaurtregulov.spring.mvc_hibernate_aop.entity.dao;
+package com.dmitriikorneev.spring.mvc_hibernate_aop.entity.dao;
 
-import com.zaurtregulov.spring.mvc_hibernate_aop.entity.Employee;
+import com.dmitriikorneev.spring.mvc_hibernate_aop.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

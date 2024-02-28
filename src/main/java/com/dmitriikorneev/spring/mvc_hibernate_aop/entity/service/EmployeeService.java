@@ -1,6 +1,6 @@
-package com.zaurtregulov.spring.mvc_hibernate_aop.entity.service;
+package com.dmitriikorneev.spring.mvc_hibernate_aop.entity.service;
 
-import com.zaurtregulov.spring.mvc_hibernate_aop.entity.Employee;
+import com.dmitriikorneev.spring.mvc_hibernate_aop.entity.Employee;
 
 import java.util.List;
 
