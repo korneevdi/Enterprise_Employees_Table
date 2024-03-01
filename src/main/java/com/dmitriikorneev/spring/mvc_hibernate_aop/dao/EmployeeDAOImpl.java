@@ -1,4 +1,4 @@
-package com.dmitriikorneev.spring.mvc_hibernate_aop.entity.dao;
+package com.dmitriikorneev.spring.mvc_hibernate_aop.dao;
 
 import com.dmitriikorneev.spring.mvc_hibernate_aop.entity.Employee;
 import org.hibernate.Session;
@@ -27,7 +27,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
     public List<Employee> getAllEmployees() {
 
         Session session = sessionFactory.getCurrentSession();
-        List<Employee> allEmployees = session.createQuery("from Employee", Employee.class).getResultList();
+        List<Employee> allEmployees = session.createQuery("from Employee"
+                , Employee.class).getResultList();
 
         return allEmployees;
     }

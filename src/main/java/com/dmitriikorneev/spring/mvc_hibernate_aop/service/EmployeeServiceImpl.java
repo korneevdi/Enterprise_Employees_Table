@@ -1,7 +1,7 @@
-package com.dmitriikorneev.spring.mvc_hibernate_aop.entity.service;
+package com.dmitriikorneev.spring.mvc_hibernate_aop.service;
 
 import com.dmitriikorneev.spring.mvc_hibernate_aop.entity.Employee;
-import com.dmitriikorneev.spring.mvc_hibernate_aop.entity.dao.EmployeeDAO;
+import com.dmitriikorneev.spring.mvc_hibernate_aop.dao.EmployeeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

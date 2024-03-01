@@ -13,7 +13,7 @@
         <th>Surname</th>
         <th>Department</th>
         <th>Salary</th>
-        <th>Operations</th>
+        <th>Options</th>
     </tr>
 
     <c:forEach var="emp" items="${allEmps}">
@@ -32,7 +32,7 @@
             <td>${emp.department}</td>
             <td>${emp.salary}</td>
             <td>
-                <input type="button" value="Update"
+                <input type="button" value="Edit"
                        onclick="window.location.href = '${updateButton}'"/>
 
                 <input type="button" value="Delete"
