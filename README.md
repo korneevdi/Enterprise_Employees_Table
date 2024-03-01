@@ -1,6 +1,6 @@
 ## Description
 
-The desired outcome of the application is to display some database data in a **View** component, i.e. at the web page. In addition, each employee has the option to *"update"* and *"delete"*, moreover, you can add new employees to the database directly on the web page.
+The desired outcome of the application is to display some database data in a **View** component, i.e. at the web page. In addition, each employee has the option to *"edit"* and *"delete"*, moreover, you can add new employees to the database directly on the web page.
 
 #### PICTURE (will be added soon)
 
@@ -36,3 +36,5 @@ Now you need to create a **Controller**. It is also placed in a separate package
 At this stage, we should add one more component to the application - **Service**. It will stand between the **Component** and the **DAO** to transfer all the necessary information between them. In this case, adding a new component is not necessary since we only have one DAO, but we must design the application correctly from the very beginning so that it can be easily extended if we need to add one more or many more DAOs. In the new package, as in the case of the DAO, we create the **EmployeeService** interface and the **EmployeeServiceImpl** class, marked with the *@Service* annotation. Here we also create a method *getAllEmployees()*, which calls the method of the same name from the DAO.
 
 Now we can add a button to the **View** component to add a new employee to the database. To do this, you need to create a new **view** (**employee-info.jsp**), which will contain a form for providing new data. To the old **View**, which contains information about all employees, we add the *Add* button, and also add a new method *addNewEmployee()* to the **Controller**.
+
+Now let's add new functionality to our application - the *"edit"* and *"delete"* buttons. When you click on this button, the same **View** should open as when adding a new employee. But only in this case the data will already be entered into the fields, and we will be able to change them. To do this, we can write a new method and a new **View**, but this would be a violation of best practice. We can reuse existing code! At the same time, to find a worker, we can use his ID from the database, because this is a unique number for everyone. And to the table of our existing **View** we need to add a new column with the options *"edit"* and *"delete"*. And it is in these buttons that we will store information about the IDs of employees in order to correctly identify them in the database. We write this information in the **all-employees.jsp** file after the forEach loop.
