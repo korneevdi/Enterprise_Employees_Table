@@ -14,14 +14,15 @@ import java.util.List;
 @Controller
 public class MyController {
 
+    // dependency on Service
     @Autowired
     private EmployeeService employeeService;
 
-    @RequestMapping("/")
+    @RequestMapping("/") // address in browser
     public String showAllEmployees(Model model) {
 
-        List<Employee> allEmployees = employeeService.getAllEmployees();
-        model.addAttribute("allEmps", allEmployees);
+        List<Employee> allEmployees = employeeService.getAllEmployees(); // call the method from Service
+        model.addAttribute("allEmps", allEmployees); // put an attribute to the Model so that View can use it
 
         return "all-employees";
     }

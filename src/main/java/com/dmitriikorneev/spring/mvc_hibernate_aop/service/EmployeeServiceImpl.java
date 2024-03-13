@@ -8,9 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service // mark a class as service
 public class EmployeeServiceImpl implements EmployeeService{
 
+    // dependency on DAO
     @Autowired
     private EmployeeDAO employeeDAO;
 
@@ -18,7 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Transactional
     public List<Employee> getAllEmployees() {
 
-        return employeeDAO.getAllEmployees();
+        return employeeDAO.getAllEmployees(); // call a method from DAO
     }
 
     @Override

@@ -2,11 +2,11 @@ package com.dmitriikorneev.spring.mvc_hibernate_aop.entity;
 
 import javax.persistence.*;
 
-@Entity
+@Entity // connection to MySQL
 @Table(name = "employees")
 public class Employee {
 
-    @Id
+    @Id // primary key of the table
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;

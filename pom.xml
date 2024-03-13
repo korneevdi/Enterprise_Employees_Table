@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.zaurtregulov.spring.mvc</groupId>
+  <groupId>com.dmitriikorneev.spring.mvc</groupId>
   <artifactId>spring_course_mvc_hibernate_aop</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -13,11 +13,12 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.11</maven.compiler.source>
+    <maven.compiler.target>1.11</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <!-- library for testing Java code, available during a test only -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -25,42 +26,51 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Spring MVC functionality -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>5.2.9.RELEASE</version>
     </dependency>
 
+    <!-- JavaServerPages Standard Tag Library (JSTL)
+    simplifies web applications (for each etc.) -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
 
+    <!-- Hibernate library, provides functionality for working
+    with databases via ORM (Object-Relational Mapping) -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>5.4.22.Final</version>
     </dependency>
 
+    <!-- connection to the database -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.21</version>
     </dependency>
 
+    <!-- connection pool c3p0 for JDBC (Java Database Connectivity) applications -->
     <dependency>
       <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
       <version>0.9.5.2</version>
     </dependency>
 
+    <!-- displaying Java objects as database table rows and vice versa -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
       <version>5.2.9.RELEASE</version>
     </dependency>
 
+    <!-- AspectJ library, provides capabilities for using AOP -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
@@ -73,24 +83,42 @@
   <build>
     <finalName>spring_course_mvc_hibernate_aop</finalName>
 
+    <!-- Add some plugins to manage the build of the project
+    and perform various tasks during the build process -->
     <pluginManagement>
       <plugins>
+
+        <!-- Cleaning the "target" directory before performing the main
+        project build to ensure that no previous build results remain -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
+
+        <!-- Copying project resources from the "resources" directory
+        to the "target/classes" directory so that they are
+        available to the application at runtime. -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
+
+        <!-- Compiling the project's Java source files into Java bytecode -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
+
+        <!-- Runs JUnit tests on a project at build time. Tests and test results
+        reports run from the "src/test/java" directory. -->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
+
+        <!-- Create a WAR (Web Application Archive) file that contains
+        all the components of a web application that are
+        needed to deploy it to an application server. -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
@@ -100,5 +128,7 @@
 
   </build>
 </project>
+
+
 
 

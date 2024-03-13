@@ -9,9 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository // special annotation for DAO including @Component
 public class EmployeeDAOImpl implements EmployeeDAO{
 
+    // dependency on the SessionFactory bean (applicationContext.xml)
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -28,7 +29,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
         Session session = sessionFactory.getCurrentSession();
         List<Employee> allEmployees = session.createQuery("from Employee"
-                , Employee.class).getResultList();
+                , Employee.class).getResultList(); // get a list of employees through the session
 
         return allEmployees;
     }
